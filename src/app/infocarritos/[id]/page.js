@@ -1,19 +1,20 @@
 'use client'
 import Link from 'next/link';
 import Image from 'next/image'
-import styles from './page.module.css'
+
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 
-export default function Home() {
+export default function Home({params}) {
 
-  const [carritos, setCarritos] = useState([]);
+  const [productos, setProductos] = useState([]);
   const [carga, setCarga] = useState(true);
+  
   useEffect(() => {
 
-    axios.get('https://fakestoreapi.com/carts')
+    axios.get('https://fakestoreapi.com/carts/'+params.id)
       .then(response => {
-        setCarritos(response.data);
+        setProductos(response.data.products);
         setCarga(false);
 
         console.log(response.data);
@@ -30,12 +31,12 @@ export default function Home() {
   } else {
     return (
       <div>
-        {carritos.map((carrito) => {
+        {productos.map((producto) => {
           return (
             <div>
-              <h1>carrito {carrito.id}</h1>
-              <h2>{carrito.date}</h2>
-              <Link href ={'/infocarritos/'+carrito.id}>Ver Detalle</Link>
+              <h1>producto {producto.productId}</h1>
+              
+              <Link href ={'/infoproductos/'+producto.productId}>Ver Detalle</Link>
             </div>
 
 

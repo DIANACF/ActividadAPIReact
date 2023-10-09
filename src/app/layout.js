@@ -1,4 +1,5 @@
 import './globals.css'
+import Link from 'next/link';
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,10 +18,12 @@ export default function RootLayout({ children }) {
           <section>
           <nav>
                 <ul>
-                    <il>Carts</il>
-                    <il>Products</il>
-                    <il>New Cards</il>
-                    <il>New Products</il>
+                    <li> <Link href={'/'}>Carts</Link></li>
+                    <li><Link href={'/infoproductos'}>Products</Link></li>
+                    <li><Link href={'/nuevocarrito'}>New Carts</Link></li>
+      
+                    <li><Link href={'/nuevoproducto'}>New products</Link></li>
+                    
                 </ul>
             </nav>
 
