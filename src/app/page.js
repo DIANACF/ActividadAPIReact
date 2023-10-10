@@ -29,10 +29,10 @@ export default function Home() {
     )
   } else {
     return (
-      <div>
+      <div >
         {carritos.map((carrito) => {
           return (
-            <div>
+            <div className={styles.contenedor}>
               <h1>carrito {carrito.id}</h1>
               <h2>{carrito.date}</h2>
               <Link href ={'/infocarritos/'+carrito.id}>Ver Detalle</Link>

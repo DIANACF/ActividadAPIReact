@@ -30,9 +30,9 @@ export default function Home({params}) {
     )
   } else {
     return (
-      <div>
+      <div >
         <h1>{producto.title}</h1>
-        <img src={producto.image}></img>
+        <img src={producto.image} ></img>
         <h2>$ {producto.price}</h2>
       </div>
 

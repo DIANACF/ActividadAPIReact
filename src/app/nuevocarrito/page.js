@@ -6,7 +6,7 @@ export default function Crear(){
 
     const [nombreP, setNombreP] = useState('');
     const [cantidad, setCantidad] = useState('');
-    const [listaProd, setListaProd] = useState([]);
+    
 function agregarCarrito(evento){
 evento.preventDefault();
 axios.post('https://fakestoreapi.com/carts', {

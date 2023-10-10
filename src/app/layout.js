@@ -1,6 +1,7 @@
 import './globals.css'
 import Link from 'next/link';
 import { Inter } from 'next/font/google'
+import styles from './page.module.css';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,16 +14,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header>App</header>
+        
+        <header className={styles.header}>App</header>
         <div>
           <section>
           <nav>
                 <ul>
-                    <li> <Link href={'/'}>Carts</Link></li>
-                    <li><Link href={'/infoproductos'}>Products</Link></li>
-                    <li><Link href={'/nuevocarrito'}>New Carts</Link></li>
-      
-                    <li><Link href={'/nuevoproducto'}>New products</Link></li>
+                    <li> <Link href={'/'} className={styles.opcionMenu}>Carts</Link></li>
+                    <li><Link href={'/infoproductos'} className={styles.opcionMenu}>Products</Link></li>
+                    <li><Link href={'/nuevocarrito'} className={styles.opcionMenu}>New Carts</Link></li>
+    
+                    <li><Link href={'/nuevoproducto'} className={styles.opcionMenu}>New products</Link></li>
                     
                 </ul>
             </nav>
@@ -35,7 +37,7 @@ export default function RootLayout({ children }) {
           </main>
 
         </div>
-        <footer>Diana Juliana Carranza Fonseca- 55821502</footer>
+        <footer className={styles.footerPrincipal}>Diana Juliana Carranza Fonseca- 55821502</footer>
 
       </body>
     </html>
